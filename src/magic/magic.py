@@ -77,7 +77,16 @@ class Magic:
         Returns:
             list: Lista de números primos hasta n
         """
-        pass
+        primos = []
+        for num in range(2, n + 1):
+            es_primo = True
+            for i in range(2, int(num ** 0.5) + 1):
+                if num % i == 0:
+                    es_primo = False
+                    break
+            if es_primo:
+                primos.append(num)
+        return primos
     
     def es_numero_perfecto(self, n):
         """
@@ -89,7 +98,13 @@ class Magic:
         Returns:
             bool: True si n es un número perfecto, False en caso contrario
         """
-        pass
+        if n < 2:
+            return False
+        suma_divisores = 0
+        for i in range(1, n):
+            if n % i == 0:
+                suma_divisores += i
+        return suma_divisores == n
     
     def triangulo_pascal(self, filas):
         """
@@ -101,7 +116,18 @@ class Magic:
         Returns:
             list: Lista de listas que representa el triángulo de Pascal
         """
-        pass
+        if filas <= 0:
+            return []
+        
+        triangulo = [[1]]  
+        for i in range(1, filas):
+            fila_anterior = triangulo[-1]
+            fila_nueva = [1]
+            for j in range(1, len(fila_anterior)):
+                fila_nueva.append(fila_anterior[j-1] + fila_anterior[j])
+            fila_nueva.append(1)
+            triangulo.append(fila_nueva)
+        return triangulo
     
     def factorial(self, n):
         """
