@@ -323,6 +323,8 @@ class Geometria:
         A = y1 - y2
         B = x2 - x1
         C = x1 * y2 - x2 * y1
+        if A < 0 or (A == 0 and B < 0):
+            A, B, C = -A, -B, -C
         return (A, B, C)
     
     def area_poligono_regular(self, num_lados, lado, apotema):
