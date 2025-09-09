@@ -9,7 +9,7 @@ class Logica:
         
         Args:
             a (bool): Primer valor booleano
-            b (bool): Segundo valor booleano
+            b (bool): Segundo valor booleano.
             
         Returns:
             bool: Resultado de a AND b
