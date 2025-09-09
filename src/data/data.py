@@ -202,7 +202,7 @@ class Data:
             matriz (list): Lista de listas que representa una matriz
             
         Returns:
-            list: Matriz transpuesta
+            list: Matriz transpuesta.
         """
         if not matriz:  # caso matriz vacía
             return []
